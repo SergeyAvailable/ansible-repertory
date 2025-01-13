@@ -1,50 +1,48 @@
 [![Build Status](https://travis-ci.org/express42/ansible-repertory.svg?branch=master)](https://travis-ci.org/express42/ansible-repertory)
 
-# Overview
-This repository is used as a good start point for infrastructure development. It contains basic roles and describes workflow to create solid solution.
+# Описание
+Хороший шаблон для организации Ansible проекта. Описывает необходимую структуру для создания хорошо читаемого проекта.
 
-The mastery of the ensemble is determined by the quantity and quality of plays performed. Repertory is created to comprise everything needed for server infrastructure of any level and complexity.
+## Базовые принципы
+* Один playbook - одно приложение
+* Все переменные должны определятся в файлах для переменных окружения(environmets) 
 
-## Basic principles
-* Playbook per application
-* All variables should be defined in environments' vars files
+# Структура директорий
 
-# Directory structure
-
-* `environments/` - root directory for environments
-  * `environment_dir/` - directory containing vars and hosts per environment
-    * `group_vars/` - variables defined per group
-    * `host_vars/` - variables defined per host
-    * `play_vars/` - variables defined per play in playbooks
-    * `inventory_file` - inventory file with hosts related to the environment
-* `molecule/` - molecule v2 configuration
+* `environments/` - корневая директория для окружений (prod,dev,stage..)
+  * `environment_dir/` - директория содержащая переменные и хосты для каждого окружения
+    * `group_vars/` - переменные определяемые для группы
+    * `host_vars/` - переменные определяемые для хостов
+    * `play_vars/` - переменные определямые на каждый play в playbooks
+    * `inventory_file` - список хостов для окружения
+* `molecule/` - конфигурация molecule v2
   * `resources/` - shared among molecule scenarios resources
   * `scenario_name/` - specific molecule scenarios divided by platform, default - docker containers
-* `playbooks/` - directory for playbooks, playbook per application
-* `roles/` - custom roles
-* `ansible.cfg` - config for ansible
+* `playbooks/` - директория для playbooks, один playbook - одно приложение
+* `roles/` - кастомные роли
+* `ansible.cfg` - конфиг файл проекта Ansible
 * `requirements.txt` - python requirements
-* `requirements.yml` - ansible playbooks' requirements
-* `site.yml` - playbook containing every app in infrastructure
+* `requirements.yml` - файл зависимстей ролей и коллекций
+* `site.yml` - playbook содержащий в себе все приложения проекта
 
-# What goes where
+# Где что расположить
 
-## Variables
-* All variables should be defined per environment
-* The precedence order can be seen at http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
-* Try to use only next places to define a variable:
+## Переменные
+* Все переменные должны быть определены в соответсвующем окружении(environmetns)
+* Порядок старшинства переменных http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+* старайтесь использовать только следующие расположения переменных:
   * Environment host_vars
   * Environment group_vars
   * Environment play_vars
-* Avoid setting variable in playbooks
+* Избегайте объявления переменных в playbook
 
 ## Tasks
-* All tasks should be defined in roles
+* Все tasks должны быть определены в ролях
 
 ## Playbooks
-* Playbooks contain only roles, groups of hosts and vars files
-* Playbook should contain everything needed for application to start
-* Avoid setting variables and tasks in playbooks
+* Playbooks содержат только роли, группы хостов и файлы переменных
+* Playbook должен содержать все нужное для запуска приложения
+* Избегайте описания переменных и tasls в playbooks
 * You can use `site.yml` as the only entrypoint for your configuration
 
 # Getting started

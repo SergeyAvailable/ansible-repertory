@@ -2,7 +2,7 @@
 extends: default
 
 ignore: |
-  .imported_roles/
+  roles/vendor
 
 rules:
   line-length:

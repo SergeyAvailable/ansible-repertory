@@ -1,0 +1,40 @@
+---
+- src: ANXS.postgresql
+  version: v1.10.1
+- src: dj-wasabi.zabbix-agent
+  version: 1.4.0
+- src: dj-wasabi.zabbix-server
+  version: 1.2.0
+- src: dj-wasabi.zabbix-web
+  version: 1.3.0
+
+# ПРИМЕРЫ:
+
+# Установить роль из Ansible Galaxy.
+roles:
+  - name: geerlingguy.java
+    version: "1.9.6" # note that ranges are not supported for roles
+
+# Установить роль из Ansible Galaxy.
+collections:
+  - name: community.general
+    version: ">=7.0.0"
+    source: https://galaxy.ansible.com
+
+# Устновка из github
+- src: https://github.com/bennojoy/nginx
+
+# Установка из Bitbucket
+- src: git+https://bitbucket.org/willthames/git-ansible-galaxy
+  version: v1.4
+
+# Установка из нескольких файлов
+webservers.yaml содержит в себе:
+- src: https://github.com/bennojoy/nginx
+
+- src: git+https://bitbucket.org/willthames/git-ansible-galaxy
+  version: v1.4
+
+requirements.yaml содержит в себе:
+- name: yatesr.timezone
+- include: <путь_к_файлу_зависимостей>/webserver.yml
