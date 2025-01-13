@@ -29,7 +29,7 @@
 
 ## Переменные
 * Все переменные должны быть определены в соответсвующем окружении(environmetns)
-* Порядок старшинства переменных http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
+* Приоритет переменных http://docs.ansible.com/ansible/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable
 * старайтесь использовать только следующие расположения переменных:
   * Environment host_vars
   * Environment group_vars
