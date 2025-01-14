@@ -1,3 +1,7 @@
+Vault file или string? каким образом лучше использовать ansible-vault
+
+
+
 [![Build Status](https://travis-ci.org/express42/ansible-repertory.svg?branch=master)](https://travis-ci.org/express42/ansible-repertory)
 
 # Описание

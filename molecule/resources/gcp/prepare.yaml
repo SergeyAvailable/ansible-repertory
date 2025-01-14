@@ -7,7 +7,7 @@
 #       shell: "gcloud compute ssh {{ item.name }} --zone={{ item.zone }} --command 'exit'"
 #       changed_when: false
 #       with_items: "{{ molecule_yml.platforms }}"
-    
+
 - name: Prepare
   hosts: all
   gather_facts: false

@@ -1,7 +1,7 @@
 site.retry
 vault.key
 .vagrant
-.imported_roles
+roles/vendor
 environments/molecule/ansible.cfg
 environments/molecule/rakefile
 environments/molecule/vagrantfile
