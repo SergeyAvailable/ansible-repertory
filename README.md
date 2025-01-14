@@ -1,5 +1,5 @@
 Vault file или string? каким образом лучше использовать ansible-vault
-
+Ansible запускается руками или в рамках системы автоматизации?
 
 
 [![Build Status](https://travis-ci.org/express42/ansible-repertory.svg?branch=master)](https://travis-ci.org/express42/ansible-repertory)
@@ -24,8 +24,9 @@ Vault file или string? каким образом лучше использо�
   * `scenario_name/` - specific molecule scenarios divided by platform, default - docker containers
 * `playbooks/` - директория для playbooks, один playbook - одно приложение
 * `roles/` - кастомные роли
+  * `vendor` - директория для импортируемых ролей
 * `ansible.cfg` - конфиг файл проекта Ansible
-* `requirements.txt` - python requirements
+* `requirements.txt` - python зависимости
 * `requirements.yml` - файл зависимстей ролей и коллекций
 * `site.yml` - playbook содержащий в себе все приложения проекта
 

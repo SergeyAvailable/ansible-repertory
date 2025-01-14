@@ -2,11 +2,5 @@ site.retry
 vault.key
 .vagrant
 roles/vendor
-environments/molecule/ansible.cfg
-environments/molecule/rakefile
-environments/molecule/vagrantfile
-environments/molecule/state
-environments/molecule/ansible_inventory
-
 __pycache__
 pytestdebug.log
